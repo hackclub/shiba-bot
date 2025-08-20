@@ -12,6 +12,4 @@ RUN pip install --upgrade pip && \
 
 COPY . .
 
-HEALTHCHECK CMD pgrep -f app.py || exit 1
-
 CMD ["python", "app.py"]
