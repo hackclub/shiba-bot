@@ -14,9 +14,5 @@ RUN apt-get update && apt-get install -y curl && \
 # copy app
 COPY . .
 
-# healthcheck for coolify
-HEALTHCHECK --interval=5s --timeout=3s --retries=5 \
-  CMD curl -f http://localhost:3000/health || exit 1
-
 # start the app
 CMD ["python", "app.py"]
