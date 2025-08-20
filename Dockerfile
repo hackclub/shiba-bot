@@ -5,15 +5,18 @@ ENV PYTHONUNBUFFERED 1
 
 WORKDIR /app
 
+# install dependencies
 COPY requirements.txt .
-
-RUN pip install --upgrade pip && \
+RUN apt-get update && apt-get install -y curl && \
+    pip install --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
+# copy app
 COPY . .
 
-HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=1 \
-  CMD echo "ok" || exit 0
+# healthcheck for coolify
+HEALTHCHECK --interval=5s --timeout=3s --retries=5 \
+  CMD curl -f http://localhost:3000/health || exit 1
 
-
+# start the app
 CMD ["python", "app.py"]
