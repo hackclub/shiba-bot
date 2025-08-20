@@ -14,5 +14,7 @@ RUN apt-get update && apt-get install -y curl && \
 # copy app
 COPY . .
 
+HEALTHCHECK CMD exit 0
+
 # start the app
 CMD ["python", "app.py"]
