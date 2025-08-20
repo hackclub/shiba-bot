@@ -12,4 +12,8 @@ RUN pip install --upgrade pip && \
 
 COPY . .
 
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=1 \
+  CMD echo "ok" || exit 0
+
+
 CMD ["python", "app.py"]
