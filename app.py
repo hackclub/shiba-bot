@@ -3,7 +3,6 @@ import os
 from dotenv import load_dotenv
 from pyairtable import Api
 
-# load local .env (only for local dev)
 load_dotenv()
 
 app = App(
