@@ -1,3 +1,15 @@
-slack-bolt==1.20.0
-requests
-python-dotenv   # optional, for loading .env in local dev
+annotated-types==0.7.0
+certifi==2025.8.3
+charset-normalizer==3.4.3
+idna==3.10
+inflection==0.5.1
+pyairtable==3.2.0
+pydantic==2.11.7
+pydantic_core==2.33.2
+python-dotenv==1.1.1
+requests==2.32.5
+slack_bolt==1.20.0
+slack_sdk==3.36.0
+typing-inspection==0.4.1
+typing_extensions==4.14.1
+urllib3==2.5.0
